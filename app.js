@@ -44,7 +44,7 @@ const url="https://us1.api.mailchimp.com/3.0/lists/8565496e4e";
 const options = {
 
     method: "POST",
-    auth:"megha:a76c2268c7d8c0bba1b7415cc1fe1b153-us1"
+    auth:"megha:76c2268c7d8c0bba1b7415cc1fe1b153-us1"
 }
 
 
