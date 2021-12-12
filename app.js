@@ -2,16 +2,16 @@ const express = require ("express");
 const bodyParser = require ("body-parser");
 const request = require ("request");
 const https = require("https");
-const { path } = require("express/lib/application");
+
 
 const app= express();
 
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req,res){
 
-res.sendFile(path.join(__dirname , 'public',"signup.html"));
+res.sendFile(__dirname + '/signup.html');
 
 })
 
@@ -52,9 +52,9 @@ const options = {
 const request = https.request(url,options, function(response) {
 
     if (response.statusCode===200) {
-        res.sendFile(path.join(__dirname , 'public', "success.html"))
+        res.sendFile(__dirname + '/success.html')
     } else {
-        res.sendFile(path.join(__dirname ,'public', "failure.html"))
+        res.sendFile(__dirname + '/failure.html')
     }
 
     response.on("data", function(data){
