@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req,res){
 
-res.sendFile(__dirname + "/signup.html");
+res.sendFile(__dirname + 'public',"/signup.html");
 
 })
 
@@ -51,9 +51,9 @@ const options = {
 const request = https.request(url,options, function(response) {
 
     if (response.statusCode===200) {
-        res.sendFile (__dirname + "/success.html")
+        res.sendFile (__dirname + 'public', "/success.html")
     } else {
-        res.sendFile (__dirname +"/failure.html")
+        res.sendFile (__dirname + 'public', "/failure.html")
     }
 
     response.on("data", function(data){
